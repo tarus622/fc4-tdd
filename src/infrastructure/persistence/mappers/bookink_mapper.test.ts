@@ -57,9 +57,9 @@ describe("BookingMapper", () => {
       id: "1",
       property: propertyEntity,
       guest: userEntity,
-      // startDate: new Date(Date.now()),
-      // endDate: new Date(Date.now() + 20000),
-      guestCount: 20,
+      startDate: new Date(Date.now()),
+      endDate: new Date(Date.now() + 20000),
+      // guestCount: 20,
       totalPrice: 20000,
       status: "CONFIRMED",
     };
@@ -67,7 +67,7 @@ describe("BookingMapper", () => {
     const property = new Property("1", "Davi", "Um Castelo Grande", 20, 200);
 
     expect(() => BookingMapper.toDomain(bookingEntity, property)).toThrow(
-      "A data de início e término não podem ser iguais."
+      "O guestCount é obrigatório"
     );
   });
 
