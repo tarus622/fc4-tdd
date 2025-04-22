@@ -31,7 +31,7 @@ beforeAll(async () => {
 
   userService = new UserService(userRepository);
 
-  const userController = new UserController(userService);
+  userController = new UserController(userService);
 
   app.post("/users", (req, res, next) => {
     userController.createUser(req, res).catch((err) => next(err));
