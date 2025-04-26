@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Projeto TDD
 
 ## Como executar os testes
 
@@ -8,4 +8,4 @@ Siga os passos abaixo para configurar o projeto e rodar os testes:
 
 2. **Dentro da pasta raiz do repositório, execute o comando npm install**
    
-3. **Rode o comando npm run test**
+3. **Rode o comando "npm run test"**
