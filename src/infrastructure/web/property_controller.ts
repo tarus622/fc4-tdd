@@ -18,10 +18,6 @@ export class PropertyController {
         basePricePerNight: req.body.basePricePerNight,
       };
 
-      if (!dto.name) {
-        throw new Error("O campo nome é obrigatório.");
-      }
-
       const property = await this.propertyService.createProperty(dto);
 
       return res.status(201).json({

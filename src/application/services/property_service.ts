@@ -11,6 +11,18 @@ export class PropertyService {
   }
 
   async createProperty(dto: CreatePropertyDTO): Promise<Property | null> {
+    if (!dto.name) {
+      throw new Error("O campo nome é obrigatório.");
+    }
+
+    if (dto.maxGuests <= 0) {
+      throw new Error("A capacidade máxima deve ser maior que zero.");
+    }
+
+    if (!dto.basePricePerNight) {
+      throw new Error("O preço base por noite é obrigatório.");
+    }
+
     const property = new Property(
       uuidv4(),
       dto.name,
